@@ -1,0 +1,6 @@
+.vs/
+bin/
+obj/
+
+RPGUnitTest/bin/
+RPGUnitTest/obj/
