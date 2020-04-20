@@ -18,7 +18,7 @@ namespace RPG.Utils
             {
                 BasePlayer player;
                 var name = PlayerNames[new Random().Next(0, PlayerNames.Count)];
-                var force = new Random().Next(15, 30);
+                var force = new Random().Next(15, 31);
                 var health = new Random().Next(80, 101);
                 switch (new Random().Next(0, 3))
                 {
@@ -52,12 +52,12 @@ namespace RPG.Utils
                 }
                 if (!firstPlayer.CheckHealth())
                 {
-                    Console.WriteLine($"Archer {firstPlayer.Name} was killed.");
+                    Console.WriteLine($"The player {firstPlayer.Name} was killed.");
                     PlayerLists.Remove(firstPlayer);
                 } 
                 else
                 {
-                    Console.WriteLine($"Archer {secondPlayer.Name} was killed.");
+                    Console.WriteLine($"The player {secondPlayer.Name} was killed.");
                     PlayerLists.Remove(secondPlayer);
                 }
             }
@@ -67,6 +67,11 @@ namespace RPG.Utils
         {
             Console.WriteLine($"The {PlayerLists[0].Name} is winner.");
             return PlayerLists[0];
+        }
+
+        public static List<BasePlayer> GetPlayers()
+        {
+            return PlayerLists;
         }
 
         private static void DoAttack(BasePlayer skill, BasePlayer secondPlayer)

@@ -18,11 +18,11 @@ namespace RPG.Nps
             if (IsActivateAttack)
             {
                 Console.WriteLine($"Knight {Name} attack to with aditional damage {damage}.");
-                player.Health = damage * 0.3f;
+                player.Health -= damage * 0.3f + damage;
                 IsActivateAttack = false;
                 return;
             }
-            player.Health = damage;
+            player.Health -= damage;
             Console.WriteLine($"Knight {Name} attack with damage {damage}.");
         }
 
